@@ -33,7 +33,7 @@ img {
 
 /* Header */
 header {
-    background: rgba(18, 18, 18, 0.85); /* Semi-transparent */
+    background: rgba(18, 18, 18, 0.85);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid #2a2a2a;
     padding: 1rem 0;
@@ -109,6 +109,50 @@ section:nth-of-type(even) {
     background-color: var(--light-bg);
 }
 
+/* Services Section */
+#services {
+    background-color: var(--light-bg);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-item {
+    background-color: var(--dark-bg);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.service-item i {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.service-item p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
 /* Portfolio Grid */
 .portfolio-grid {
     display: grid;
@@ -157,8 +201,20 @@ section:nth-of-type(even) {
     margin-bottom: 2rem;
 }
 
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Primary Button (WhatsApp) */
 .cta-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: var(--primary-color);
     color: #fff;
     padding: 1rem 2.5rem;
@@ -166,14 +222,43 @@ section:nth-of-type(even) {
     border-radius: 50px;
     font-weight: 600;
     font-size: 1.1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, border 0.3s ease;
+    border: 2px solid var(--primary-color); /* Solid border matching bg */
+}
+
+.cta-button i {
+    font-size: 1.3em;
+    margin-right: 0.5rem;
 }
 
 .cta-button:hover {
     background-color: #00a0d9;
+    border-color: #00a0d9;
     transform: scale(1.05);
 }
 
+/* Secondary Button (Email) */
+.cta-button.cta-button-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.cta-button.cta-button-secondary i {
+    color: var(--primary-color);
+}
+
+.cta-button.cta-button-secondary:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.cta-button.cta-button-secondary:hover i {
+    color: #fff;
+}
+
+/* Social Links */
 .social-links {
     margin-top: 3rem;
 }
@@ -181,13 +266,15 @@ section:nth-of-type(even) {
 .social-links a {
     color: var(--text-muted);
     text-decoration: none;
-    margin: 0 1.5rem;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+    margin: 0 1rem;
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
 }
 
 .social-links a:hover {
     color: var(--primary-color);
+    transform: translateY(-3px);
 }
 
 /* Footer */
@@ -250,82 +337,9 @@ footer {
     header nav {
         margin-top: 1rem;
     }
-}
 
-/* =============== SERVICES SECTION =============== */
-#services {
-    background-color: var(--light-bg); /* This will alternate the background color */
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.service-item {
-    background-color: var(--dark-bg); /* Card background */
-    padding: 2.5rem 2rem;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-.service-item i {
-    font-size: 3.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-}
-
-.service-item h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 0.5rem;
-}
-
-.service-item p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-/* =============== UPDATED CONTACT & SOCIALS =============== */
-
-/* Aligns icon in the main CTA button */
-.cta-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cta-button i {
-    font-size: 1.3em; /* Makes icon slightly bigger than text */
-    margin-right: 0.5rem;
-}
-
-/* Styles the new social icons */
-.social-links {
-    margin-top: 3rem;
-}
-
-.social-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    margin: 0 1rem;
-    font-size: 2rem; /* Makes icons larger */
-    transition: color 0.3s ease, transform 0.3s ease;
-    display: inline-block; /* Allows transform to work */
-}
-
-.social-links a:hover {
-    color: var(--primary-color);
-    transform: translateY(-3px); /* Adds a small "pop" on hover */
+    header nav a {
+        margin: 0 0.8rem;
+        font-size: 0.9rem;
+    }
 }
