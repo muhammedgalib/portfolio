@@ -11,7 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get the full-size image path from the data attribute
             const fullSrc = item.querySelector('img').getAttribute('data-full-src');
             
-            lightboxImg.setAttribute('src', fullSrc);
+            // If data attribute is missing, fallback to src
+            const src = fullSrc || item.querySelector('img').getAttribute('src');
+            
+            lightboxImg.setAttribute('src', src);
             lightbox.classList.add('active');
         });
     });
@@ -19,8 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to close the lightbox
     function closeLightbox() {
         lightbox.classList.remove('active');
-        // Optional: Reset src to prevent flash of old image
-        lightboxImg.setAttribute('src', ''); 
+        setTimeout(() => {
+             lightboxImg.setAttribute('src', ''); // Clear src after fade out
+        }, 200);
     }
 
     // Close lightbox when clicking the 'X' button
