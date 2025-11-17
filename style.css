@@ -321,7 +321,7 @@ section:nth-of-type(even) {
     transform: scale(1.05);
 }
 
-/* NEW: Portfolio Footer (For 'See More' Button) */
+/* Portfolio Footer */
 .portfolio-footer {
     text-align: center;
     margin-top: 4rem;
@@ -466,6 +466,32 @@ footer {
     color: var(--primary-color);
 }
 
+/* NEW: Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366; /* WhatsApp Green */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     header .container {
@@ -494,5 +520,14 @@ footer {
     
     .timeline-dot {
         left: -36px;
+    }
+
+    /* Adjust float button position on mobile */
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
     }
 }
