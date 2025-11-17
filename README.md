@@ -1,4 +1,4 @@
-# 🎨 Muhammed Galib - Graphic Design Portfolio
+# 🎨 Graphic Design Portfolio
 
 A premium, dark-themed personal portfolio website designed to showcase graphic design work, branding projects, and professional experience. Built with a focus on visual impact, smooth animations, and responsiveness.
 
