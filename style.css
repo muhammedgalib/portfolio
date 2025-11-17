@@ -1,15 +1,17 @@
-/* CSS Reset and Basic Setup */
+/* =========================================
+   1. CSS RESET & VARIABLES
+   ========================================= */
 :root {
     --primary-color: #00bfff; /* Deep Sky Blue */
-    --dark-bg: #121212;
-    --light-bg: #1e1e1e;
-    --text-color: #e0e0e0;
-    --text-muted: #888;
+    --dark-bg: #121212;       /* Main Background */
+    --light-bg: #1e1e1e;      /* Section Background */
+    --text-color: #e0e0e0;    /* Main Text */
+    --text-muted: #888;       /* Subtitles/Descriptions */
 }
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Prevents horizontal scroll during animations */
 }
 
 body {
@@ -33,10 +35,12 @@ img {
     padding: 0 2rem;
 }
 
-/* Header */
+/* =========================================
+   2. HEADER & NAVIGATION
+   ========================================= */
 header {
     background: rgba(18, 18, 18, 0.85);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
     border-bottom: 1px solid #2a2a2a;
     padding: 1rem 0;
     position: sticky;
@@ -69,7 +73,9 @@ header nav a:hover {
     color: var(--primary-color);
 }
 
-/* Hero & Profile Section */
+/* =========================================
+   3. HERO & PROFILE SECTION
+   ========================================= */
 #hero {
     min-height: 60vh; 
     display: flex;
@@ -88,10 +94,10 @@ header nav a:hover {
 .profile-img {
     width: 180px;
     height: 180px;
-    border-radius: 50%;
+    border-radius: 50%; /* Circle */
     object-fit: cover;
     border: 4px solid var(--primary-color);
-    box-shadow: 0 0 25px rgba(0, 191, 255, 0.4);
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.4); /* Blue Glow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -129,7 +135,9 @@ header nav a:hover {
     transform: translateY(-3px);
 }
 
-/* Sections General */
+/* =========================================
+   4. SECTIONS GENERAL
+   ========================================= */
 section {
     padding: 5rem 0;
 }
@@ -142,11 +150,25 @@ section h2 {
     color: #fff;
 }
 
+/* Alternating Background Colors */
 section:nth-of-type(even) {
     background-color: var(--light-bg);
 }
 
-/* Experience / Timeline Section */
+/* =========================================
+   5. ABOUT SECTION
+   ========================================= */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* =========================================
+   6. EXPERIENCE / TIMELINE SECTION
+   ========================================= */
 #experience {
     background-color: var(--light-bg);
 }
@@ -158,6 +180,7 @@ section:nth-of-type(even) {
     padding-left: 40px;
 }
 
+/* Vertical Line */
 .timeline::before {
     content: '';
     position: absolute;
@@ -174,6 +197,7 @@ section:nth-of-type(even) {
     margin-bottom: 3rem;
 }
 
+/* Dot on the line */
 .timeline-dot {
     position: absolute;
     left: -46px;
@@ -195,7 +219,7 @@ section:nth-of-type(even) {
 }
 
 .timeline-content {
-    background-color: var(--dark-bg); /* Contrast against light section bg */
+    background-color: var(--dark-bg);
     padding: 1.5rem 2rem;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -209,27 +233,38 @@ section:nth-of-type(even) {
     border-left: 4px solid var(--primary-color);
 }
 
+/* Company Name (Main Heading) */
 .timeline-content h3 {
     margin: 0 0 5px 0;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.5rem; 
+    font-weight: 700;
 }
 
-.timeline-content .company {
-    color: #fff;
+/* Job Title (Subheading) */
+.timeline-content .role {
+    color: var(--primary-color);
     font-weight: 600;
-    margin: 0 0 10px 0;
-    opacity: 0.9;
+    font-size: 1.1rem;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .timeline-content .description {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     margin: 0;
     line-height: 1.6;
 }
 
-/* Services Section */
+.timeline-content .description strong {
+    color: #e0e0e0;
+}
+
+/* =========================================
+   7. SERVICES SECTION
+   ========================================= */
 #services {
     background-color: var(--dark-bg);
 }
@@ -273,7 +308,9 @@ section:nth-of-type(even) {
     line-height: 1.6;
 }
 
-/* Portfolio Grid */
+/* =========================================
+   8. PORTFOLIO SECTION
+   ========================================= */
 #portfolio {
     background-color: var(--light-bg);
 }
@@ -305,16 +342,9 @@ section:nth-of-type(even) {
     transform: scale(1.05);
 }
 
-/* About Section */
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: 300;
-}
-
-/* Contact Section */
+/* =========================================
+   9. CONTACT SECTION
+   ========================================= */
 #contact {
     text-align: center;
     background-color: var(--dark-bg);
@@ -335,7 +365,7 @@ section:nth-of-type(even) {
     margin-top: 2rem;
 }
 
-/* Primary Button */
+/* Primary Button Style (Solid Blue) */
 .cta-button {
     display: inline-flex;
     align-items: center;
@@ -362,7 +392,7 @@ section:nth-of-type(even) {
     transform: scale(1.05);
 }
 
-/* Secondary Button */
+/* Secondary Button Style (Outline Blue) */
 .cta-button.cta-button-secondary {
     background: transparent;
     color: var(--primary-color);
@@ -402,7 +432,9 @@ section:nth-of-type(even) {
     transform: translateY(-3px);
 }
 
-/* Footer */
+/* =========================================
+   10. FOOTER & LIGHTBOX
+   ========================================= */
 footer {
     text-align: center;
     padding: 2rem 0;
@@ -412,7 +444,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Lightbox */
 #lightbox {
     position: fixed;
     top: 0;
@@ -453,7 +484,9 @@ footer {
     color: var(--primary-color);
 }
 
-/* Responsive */
+/* =========================================
+   11. RESPONSIVE ADJUSTMENTS
+   ========================================= */
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
@@ -461,19 +494,24 @@ footer {
     
     header nav {
         margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     header nav a {
-        margin: 0 0.8rem;
+        margin: 0 0.8rem 0.5rem 0.8rem;
         font-size: 0.9rem;
     }
     
     .timeline {
         padding-left: 30px;
     }
+    
     .timeline::before {
         left: 0;
     }
+    
     .timeline-dot {
         left: -36px;
     }
