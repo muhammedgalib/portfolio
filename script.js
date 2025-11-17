@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize AOS Animation Library
     AOS.init({
-        duration: 800,   // Animation duration in milliseconds
-        once: true,      // Whether animation should happen only once - while scrolling down
-        mirror: false,   // Whether elements should animate out while scrolling past them
-        offset: 100      // Offset (in px) from the original trigger point
+        duration: 800,   
+        once: true,      
+        mirror: false,   
+        offset: 100      
     });
 
     // Lightbox Functionality
@@ -16,10 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     portfolioItems.forEach(item => {
         item.addEventListener('click', () => {
-            // Get the full-size image path from the data attribute
             const fullSrc = item.querySelector('img').getAttribute('data-full-src');
-            
-            // If data attribute is missing, fallback to src
             const src = fullSrc || item.querySelector('img').getAttribute('src');
             
             lightboxImg.setAttribute('src', src);
@@ -27,28 +24,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Function to close the lightbox
     function closeLightbox() {
         lightbox.classList.remove('active');
         setTimeout(() => {
-             lightboxImg.setAttribute('src', ''); // Clear src after fade out
+             lightboxImg.setAttribute('src', ''); 
         }, 200);
     }
 
-    // Close lightbox when clicking the 'X' button
     closeBtn.addEventListener('click', closeLightbox);
-
-    // Close lightbox when clicking *outside* the image
     lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox) {
             closeLightbox();
         }
     });
 
-    // Update Copyright Year
     const currentYearSpan = document.getElementById('current-year');
     if (currentYearSpan) {
         currentYearSpan.textContent = new Date().getFullYear();
     }
-
 });
