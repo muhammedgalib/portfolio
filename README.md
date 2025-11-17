@@ -1,7 +1,5 @@
 # 🎨 Muhammed Galib - Graphic Design Portfolio
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-
 A premium, dark-themed personal portfolio website designed to showcase graphic design work, branding projects, and professional experience. Built with a focus on visual impact, smooth animations, and responsiveness.
 
 **[🔗 View Live Demo](https://muhammedgalib.github.io/portfolio)** *(Note: Ensure GitHub Pages is enabled in your Settings to see the live site)*
