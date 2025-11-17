@@ -1,5 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Initialize AOS Animation Library
+    AOS.init({
+        duration: 800,   // Animation duration in milliseconds
+        once: true,      // Whether animation should happen only once - while scrolling down
+        mirror: false,   // Whether elements should animate out while scrolling past them
+        offset: 100      // Offset (in px) from the original trigger point
+    });
+
     // Lightbox Functionality
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
