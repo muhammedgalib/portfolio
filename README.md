@@ -18,16 +18,11 @@ A premium, dark-themed personal portfolio website designed to showcase graphic d
 
 ---
 
-## 📂 Project Structure
+### Contact
+WhatsApp: +91 80895 39792
 
-```text
-/
-├── index.html          # Main HTML structure
-├── style.css           # All styling (Dark theme, layout, animations)
-├── script.js           # Interactivity (Lightbox, Date update, AOS init)
-├── README.md           # Project documentation
-└── images/             # Folder containing assets
-    ├── profile.jpg     # User profile picture
-    ├── poster-01-thumb.jpg  # Portfolio thumbnails
-    ├── poster-01-full.jpg   # Full-size portfolio images
-    └── ...
+Email: muhammedgalib792@gmail.com
+
+Behance: muhammedgalib_
+
+© 2025 Muhammed Galib. All Rights Reserved.
