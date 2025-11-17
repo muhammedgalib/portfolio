@@ -1,10 +1,12 @@
-/* CSS Reset and Basic Setup */
+/* =========================================
+   1. CSS RESET & VARIABLES
+   ========================================= */
 :root {
     --primary-color: #00bfff; /* Deep Sky Blue */
-    --dark-bg: #121212;
-    --light-bg: #1e1e1e;
-    --text-color: #e0e0e0;
-    --text-muted: #888;
+    --dark-bg: #121212;       /* Main Background */
+    --light-bg: #1e1e1e;      /* Section Background */
+    --text-color: #e0e0e0;    /* Main Text */
+    --text-muted: #888;       /* Subtitles/Descriptions */
 }
 
 html {
@@ -33,7 +35,9 @@ img {
     padding: 0 2rem;
 }
 
-/* Header */
+/* =========================================
+   2. HEADER & NAVIGATION
+   ========================================= */
 header {
     background: rgba(18, 18, 18, 0.85);
     backdrop-filter: blur(10px);
@@ -69,7 +73,9 @@ header nav a:hover {
     color: var(--primary-color);
 }
 
-/* Hero & Profile Section */
+/* =========================================
+   3. HERO & PROFILE SECTION
+   ========================================= */
 #hero {
     min-height: 60vh; 
     display: flex;
@@ -129,7 +135,9 @@ header nav a:hover {
     transform: translateY(-3px);
 }
 
-/* Sections General */
+/* =========================================
+   4. SECTIONS GENERAL
+   ========================================= */
 section {
     padding: 5rem 0;
 }
@@ -146,7 +154,9 @@ section:nth-of-type(even) {
     background-color: var(--light-bg);
 }
 
-/* About Section */
+/* =========================================
+   5. ABOUT SECTION
+   ========================================= */
 .about-content {
     max-width: 800px;
     margin: 0 auto;
@@ -155,7 +165,9 @@ section:nth-of-type(even) {
     font-weight: 300;
 }
 
-/* Experience / Timeline Section */
+/* =========================================
+   6. EXPERIENCE / TIMELINE SECTION
+   ========================================= */
 #experience {
     background-color: var(--light-bg);
 }
@@ -218,6 +230,7 @@ section:nth-of-type(even) {
     border-left: 4px solid var(--primary-color);
 }
 
+/* Company Name (Heading) */
 .timeline-content h3 {
     margin: 0 0 5px 0;
     color: #fff;
@@ -225,6 +238,7 @@ section:nth-of-type(even) {
     font-weight: 700;
 }
 
+/* Job Title (Subheading) */
 .timeline-content .role {
     color: var(--primary-color);
     font-weight: 600;
@@ -245,7 +259,9 @@ section:nth-of-type(even) {
     color: #e0e0e0;
 }
 
-/* Services Section */
+/* =========================================
+   7. SERVICES SECTION
+   ========================================= */
 #services {
     background-color: var(--dark-bg);
 }
@@ -289,7 +305,9 @@ section:nth-of-type(even) {
     line-height: 1.6;
 }
 
-/* Portfolio Section */
+/* =========================================
+   8. PORTFOLIO SECTION
+   ========================================= */
 #portfolio {
     background-color: var(--light-bg);
 }
@@ -321,13 +339,15 @@ section:nth-of-type(even) {
     transform: scale(1.05);
 }
 
-/* Portfolio Footer */
+/* Portfolio Footer (See More Button) */
 .portfolio-footer {
     text-align: center;
     margin-top: 4rem;
 }
 
-/* Contact Section */
+/* =========================================
+   9. CONTACT SECTION
+   ========================================= */
 #contact {
     text-align: center;
     background-color: var(--dark-bg);
@@ -415,7 +435,9 @@ section:nth-of-type(even) {
     transform: translateY(-3px);
 }
 
-/* Footer */
+/* =========================================
+   10. FOOTER & LIGHTBOX
+   ========================================= */
 footer {
     text-align: center;
     padding: 2rem 0;
@@ -425,7 +447,6 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Lightbox */
 #lightbox {
     position: fixed;
     top: 0;
@@ -466,33 +487,44 @@ footer {
     color: var(--primary-color);
 }
 
-/* NEW: Floating WhatsApp Button */
-.whatsapp-float {
+/* =========================================
+   11. FLOATING WHATSAPP BUTTON
+   ========================================= */
+.float-whatsapp {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366; /* WhatsApp Green */
-    color: white;
     width: 60px;
     height: 60px;
-    border-radius: 50%;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
     text-align: center;
     font-size: 35px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
+    box-shadow: 2px 2px 3px #111;
+    z-index: 10000;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     transition: all 0.3s ease;
-    text-decoration: none;
+    animation: whatsapp-pulse 2s infinite;
 }
 
-.whatsapp-float:hover {
+.float-whatsapp:hover {
     background-color: #128c7e;
     transform: scale(1.1);
 }
 
-/* Responsive */
+/* Pulse Animation */
+@keyframes whatsapp-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* =========================================
+   12. RESPONSIVE ADJUSTMENTS
+   ========================================= */
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
@@ -522,12 +554,12 @@ footer {
         left: -36px;
     }
 
-    /* Adjust float button position on mobile */
-    .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
+    /* Mobile Float Button */
+    .float-whatsapp {
         width: 50px;
         height: 50px;
-        font-size: 30px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 28px;
     }
 }
