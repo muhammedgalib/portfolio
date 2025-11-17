@@ -343,3 +343,56 @@ footer {
         font-size: 0.9rem;
     }
 }
+
+/* =============== UPDATED HERO / PROFILE =============== */
+
+/* Profile Image Styling */
+.profile-wrapper {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 180px; /* Adjust size as needed */
+    height: 180px;
+    border-radius: 50%; /* Makes it a perfect circle */
+    object-fit: cover; /* Prevents stretching */
+    border: 4px solid var(--primary-color); /* Blue border */
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.4); /* Blue glow effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 191, 255, 0.6);
+}
+
+/* Hero Text Adjustments */
+#hero h1 {
+    margin-bottom: 0.5rem;
+    font-size: 3rem;
+}
+
+#hero .subtitle {
+    font-size: 1.2rem;
+    color: var(--primary-color); /* Make title blue */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+
+/* Hero Social Icons */
+.hero-socials a {
+    color: var(--text-muted);
+    font-size: 1.8rem;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.hero-socials a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
